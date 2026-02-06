@@ -80,23 +80,43 @@ const Navbar = () => {
               }}
             >
               {navLinks.map((link) => (
-                <Typography
-                    key={link.name}
-                  component={Link}       // ✅ Use React Router Link
-                  to={link.path}
-                  sx={{
-                    fontSize: 15,
-                    
-                    fontWeight: 550,
-                    color: "#3A2357",
-                    cursor: "pointer",
-                    "&:hover": {
-                      color: "#E30613",
-                    },
-                  }}
-                >
-                  {link.name}
-                </Typography>
+              <Typography
+  key={link.name}
+  component={Link}
+  to={link.path}
+  sx={{
+    position: "relative",
+    fontSize: 15,
+    fontWeight: 550,
+    color: "#3A2357",
+    cursor: "pointer",
+    textDecoration: "none",
+
+    // underline element
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      left: 0,
+      bottom: -6,
+      width: "0%",
+      height: "2px",
+      backgroundColor: "#E30613",
+      transition: "width 0.3s ease",
+    },
+
+    "&:hover": {
+      color: "#E30613",
+    },
+
+    "&:hover::after": {
+      width: "100%",
+    },
+  }}
+>
+  {link.name}
+</Typography>
+
+
               ))}
 
               <Button

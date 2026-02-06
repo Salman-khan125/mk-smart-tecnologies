@@ -175,7 +175,7 @@ const AboutUs = () => {
               alt="About Image 1"
               sx={{
                 width: "100%",
-                maxWidth: { xs: 260, sm: 320, md: 420 },
+                maxWidth: { xs: 340, sm: 380, md: 420 },
                 borderRadius: 2,
                 mb: 4,
                 zIndex: 1,
@@ -189,9 +189,9 @@ const AboutUs = () => {
               alt="Decorative Vector"
               sx={{
                 position: "absolute",
-                top: { xs: 20, sm: 30, md: 50 },
-                right: { xs: 10, sm: 30, md: 40 },
-                width: { xs: 50, sm: 90, md: 160 },
+                top: { xs: 30, sm: 60, md: 50 },
+                right: { xs: -14, sm: 200, md: 40 },
+                width: { xs: 100, sm: 130, md: 160 },
                 zIndex: 2,
               }}
             />
@@ -203,7 +203,7 @@ const AboutUs = () => {
               alt="About Image 2"
               sx={{
                 width: "100%",
-                maxWidth: { xs: 260, sm: 320, md: 420 },
+                maxWidth: { xs: 340, sm: 380, md: 420 },
                 borderRadius: 2,
                 zIndex: 1,
               }}
