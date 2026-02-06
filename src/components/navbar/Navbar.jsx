@@ -143,7 +143,7 @@ const Navbar = () => {
         </Toolbar>
       </Container>
 
-      {/* MOBILE DRAWER */}
+      
     {/* MOBILE DRAWER */}
 <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
   <Box
@@ -167,7 +167,7 @@ const Navbar = () => {
       {navLinks.map((link) => (
         <ListItem  button
                 key={link.name}
-                component={Link}         // ✅ Use Link inside Drawer
+                component={Link}    
                 to={link.path}>
           <ListItemText primary={link.name} />
         </ListItem>
@@ -176,7 +176,7 @@ const Navbar = () => {
 
     <Button
       fullWidth
-            component={Link}               // ✅ Contact button in drawer
+            component={Link}            
             to="/contact"
             variant="contained"
       sx={{

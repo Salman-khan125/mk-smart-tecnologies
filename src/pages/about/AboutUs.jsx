@@ -63,7 +63,7 @@ const AboutUs = () => {
       {/* Yellow Vector */}
       <Box
         component="img"
-        src="/assets/about/Vector1.png"   // 🔴 use your actual vector file name
+        src="/assets/about/Vector1.png"  
         alt="Title underline"
         sx={{
           position: "absolute",

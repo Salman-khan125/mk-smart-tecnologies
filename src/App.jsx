@@ -4,7 +4,7 @@ import Home from "./pages/home/Home";
 import AboutUs from "./pages/about/AboutUs";
 import Services from "./pages/services/Services";
 import Career from "./pages/career/Career";
-import Protfolio from "./pages/protfolio/Protfolio";
+import Portfolio from "./pages/portfolio/Portfolio";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
            <Route path="/career" element={<Career />} />
-           <Route path="/portfolio" element={<Protfolio />} />
+           <Route path="/portfolio" element={<Portfolio />} />
           
         </Route>
       </Routes>
