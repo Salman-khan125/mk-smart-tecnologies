@@ -24,7 +24,7 @@ const Footer = () => {
             gap: { xs: 4, md: 8 },
           }}
         >
-          {/* Logo */}
+        
           <Box sx={{ flexShrink: 0 }}>
             <Box
               component="img"

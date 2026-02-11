@@ -12,24 +12,24 @@ const teamMembers = [
   },
   {
     name: "John Doe",
-    role: "UI/UX Designer",
+    role: "iOS Developer",
     image: "/assets/hero/image1.png", // Direct path to public folder
     description:
-      "We create intuitive, visually appealing UI/UX designs for better engagement designs for better engagement for better engagement",
+     "We build seamless, high-performance iOS applications that deliver exceptional user experiences, leveraging Swift and the latest Apple technologies to ensure smooth functionality and elegant design.",
   },
   {
     name: "John Doe",
-    role: "UI/UX Designer",
+    role: "Android Developer",
     image: "/assets/hero/image2.jpg", 
     description:
-      "We create intuitive, visually appealing UI/UX designs for better engagement designs for better engagement for better engagement",
+     "We create robust and scalable Android applications with intuitive interfaces, ensuring compatibility across devices and optimal performance using Kotlin and modern Android frameworks.",
   },
    {
     name: "John Doe",
-    role: "UI/UX Designer",
+    role: "ASO Specialist",
     image: "/assets/hero/image3.png", // Direct path to public folder
     description:
-      "We create intuitive, visually appealing UI/UX designs for better engagement designs for better engagement for better engagement",
+     "We optimize apps for maximum visibility and downloads on app stores, implementing strategic keywords, metadata, and performance analytics to boost user acquisition and engagement.",
   },
 ];
 
