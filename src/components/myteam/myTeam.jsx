@@ -20,7 +20,14 @@ const teamMembers = [
   {
     name: "John Doe",
     role: "UI/UX Designer",
-    image: "/assets/hero/image2.jpg", // Direct path to public folder
+    image: "/assets/hero/image2.jpg", 
+    description:
+      "We create intuitive, visually appealing UI/UX designs for better engagement designs for better engagement for better engagement",
+  },
+   {
+    name: "John Doe",
+    role: "UI/UX Designer",
+    image: "/assets/hero/image3.png", // Direct path to public folder
     description:
       "We create intuitive, visually appealing UI/UX designs for better engagement designs for better engagement for better engagement",
   },

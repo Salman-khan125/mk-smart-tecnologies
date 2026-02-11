@@ -117,7 +117,7 @@ const Footer = () => {
     <IconButton
       size="small"
       component="a"
-      href="https://facebook.com"
+      href="https://www.facebook.com/people/MK-Smart-Technologies/100089050854034/?rdid=MDdvNMvP4k1uJ0pn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GQ9eshTsr%2F"
       target="_blank"
       rel="noopener noreferrer"
       sx={{
@@ -147,7 +147,7 @@ const Footer = () => {
     <IconButton
       size="small"
       component="a"
-      href="https://linkedin.com"
+      href="https://www.linkedin.com/company/mk-smart-technologies/"
       target="_blank"
       rel="noopener noreferrer"
       sx={{
