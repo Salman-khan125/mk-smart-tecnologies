@@ -1,12 +1,50 @@
-import {
-  Box,
-  Container,
-  Typography,
-  TextField,
-  Button,
-} from "@mui/material";
+import { useState } from "react";
+import { Box, Container, Typography, TextField, Button } from "@mui/material";
 
 const Contact = () => {
+  // Form state
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [sending, setSending] = useState(false);
+
+  // Handle input change
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // Handle form submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSending(true);
+
+    try {
+      const res = await fetch("http://localhost:5000/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert("Message sent successfully!");
+        setForm({ name: "", email: "", subject: "", message: "" });
+      } else {
+        alert("Error: " + (data.error || "Failed to send message"));
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Server error. Try again later.");
+    }
+
+    setSending(false);
+  };
+
   return (
     <>
       {/* ===== HERO SECTION ===== */}
@@ -33,9 +71,7 @@ const Contact = () => {
           >
             Contact Us
           </Typography>
-          <Typography sx={{ color: "#fff", opacity: 0.85 }}>
-            Home / Contact
-          </Typography>
+          <Typography sx={{ color: "#fff", opacity: 0.85 }}>Home / Contact</Typography>
         </Box>
       </Box>
 
@@ -71,38 +107,49 @@ const Contact = () => {
                   lineHeight: 1.7,
                 }}
               >
-                Have a project in mind or need help with your digital
-                solutions? Our team is ready to assist you. Reach out and
-                let’s build something great together.
+                Have a project in mind or need help with your digital solutions? Our team is ready
+                to assist you. Reach out and let’s build something great together.
               </Typography>
 
               {/* INFO BLOCKS */}
               <Box sx={{ mb: 3 }}>
-                <Typography sx={{ fontWeight: 600, color: "#3A2357" }}>
-                  📍 Address
-                </Typography>
-                <Typography sx={{ color: "#7A6F86" }}>
-                 Second Floor, Mid City Mall,
-near Rehman Abad,
-Rawalpindi 48061
-                </Typography>
+                <Typography sx={{ fontWeight: 600, color: "#3A2357" }}>📍 Address</Typography>
+                <Typography sx={{ color: "#7A6F86" }}>Lahore, Pakistan</Typography>
               </Box>
 
               <Box sx={{ mb: 3 }}>
-                <Typography sx={{ fontWeight: 600, color: "#3A2357" }}>
-                  ✉️ Email
-                </Typography>
-                <Typography sx={{ color: "#7A6F86" }}>
-                  mkstech.hr@gmail.com
+                <Typography sx={{ fontWeight: 600, color: "#3A2357" }}>✉️ Email</Typography>
+                <Typography>
+                  <Box
+                    component="a"
+                    href="mailto:mkstech.hr@gmail.com"
+                    sx={{
+                      color: "#68acf5",
+                      textDecoration: "none",
+                      transition: "0.3s",
+                      "&:hover": { color: "#0d4f96" },
+                    }}
+                  >
+                    mkstech.hr@gmail.com
+                  </Box>
                 </Typography>
               </Box>
 
               <Box>
-                <Typography sx={{ fontWeight: 600, color: "#3A2357" }}>
-                  📞 Phone
-                </Typography>
-                <Typography sx={{ color: "#7A6F86" }}>
-                  +92 340 8618145
+                <Typography sx={{ fontWeight: 600, color: "#3A2357" }}>📞 Phone</Typography>
+                <Typography>
+                  <Box
+                    component="a"
+                    href="tel:+923408618145"
+                    sx={{
+                      color: "#68acf5",
+                      textDecoration: "none",
+                      transition: "0.3s",
+                      "&:hover": { color: "#0d4f96" },
+                    }}
+                  >
+                    +92 340 8618145
+                  </Box>
                 </Typography>
               </Box>
             </Box>
@@ -129,29 +176,54 @@ Rawalpindi 48061
 
               <Box
                 component="form"
+                onSubmit={handleSubmit}
                 sx={{
                   display: "grid",
                   gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" },
                   gap: 2,
                 }}
               >
-                <TextField label="Your Name" fullWidth />
-                <TextField label="Email Address" fullWidth />
+                <TextField
+                  label="Your Name"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  fullWidth
+                  required
+                />
+                <TextField
+                  label="Email Address"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  fullWidth
+                  required
+                />
                 <TextField
                   label="Subject"
+                  name="subject"
+                  value={form.subject}
+                  onChange={handleChange}
                   fullWidth
                   sx={{ gridColumn: "1 / -1" }}
+                  required
                 />
                 <TextField
                   label="Message"
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
                   multiline
                   rows={4}
                   fullWidth
                   sx={{ gridColumn: "1 / -1" }}
+                  required
                 />
 
                 <Button
+                  type="submit"
                   variant="contained"
+                  disabled={sending}
                   sx={{
                     gridColumn: "1 / -1",
                     mt: 1,
@@ -159,12 +231,10 @@ Rawalpindi 48061
                     py: 1.4,
                     fontWeight: 500,
                     textTransform: "none",
-                    "&:hover": {
-                      backgroundColor: "#c20510",
-                    },
+                    "&:hover": { backgroundColor: "#c20510" },
                   }}
                 >
-                  Send Message
+                  {sending ? "Sending..." : "Send Message"}
                 </Button>
               </Box>
             </Box>

@@ -15,31 +15,31 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const clients = [
   {
-    name: "Leo",
-    role: "Lead Designer",
+    name: "Michael Carter",
+    role: "Marketing Manager",
     image: "/assets/hero/client1.png",
     rating: 4.5,
-    title: "It was a very good experience",
+    title: "It was a smooth and professional experience",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh mauris, nec turpis orci lectus maecenas.",
+      "I was impressed by the level of professionalism and frontend expertise. The site is fast, visually polished, and user-friendly. They paid attention to performance, responsiveness, and usability — exactly what we needed for our growing business.",
   },
   {
-    name: "Leo",
-    role: "Lead Designer",
+    name: "David Reynolds",
+    role: "Business Consultant",
     image: "/assets/hero/client2.png",
     rating: 5,
-    title: "It was a very good experience",
+    title: "The team delivered beyond expectations",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh mauris, nec turpis orci lectus maecenas.",
+      "The development process was smooth from start to finish. They transformed our design ideas into a modern, high-performing website and handled every revision professionally. Their technical knowledge and problem-solving ability made a big difference in the project’s success.",
   },
   {
-    name: "Leo",
-    role: "Lead Designer",
+    name: "James Walker",
+    role: "Product Manager",
     image: "/assets/hero/client3.png",
     rating: 4.5,
-    title: "It was a very good experience",
+    title: "Highly satisfied with the quality of work",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh mauris, nec turpis orci lectus maecenas.",
+      "Working with the team was a great experience. They understood our requirements quickly and delivered a clean, responsive interface that works flawlessly across devices. Communication was clear, deadlines were met, and the final product exceeded our expectations.t",
   },
 ];
 
@@ -58,7 +58,13 @@ const MyClients = () => {
       ];
 
   return (
-    <Box sx={{ py: { xs: 6, md: 10 }, backgroundColor: "#fff", overflowX: "hidden" }}>
+    <Box
+      sx={{
+        py: { xs: 6, md: 10 },
+        backgroundColor: "#fff",
+        overflowX: "hidden",
+      }}
+    >
       <Container maxWidth="lg">
         {/* HEADER */}
         <Box sx={{ textAlign: "center", mb: 6 }}>
@@ -119,28 +125,61 @@ const MyClients = () => {
                 }}
               >
                 {/* PROFILE */}
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    mb: 2,
-                  }}
-                >
-                  <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                    <Avatar src={client.image} sx={{ width: 56, height: 56 }} />
-                    <Box>
-                      <Typography sx={{ fontWeight: 600, color: "#3A2357" }}>
-                        {client.name}
-                      </Typography>
-                      <Typography sx={{ fontSize: "0.8rem", color: "#8a7c96" }}>
-                        {client.role}
-                      </Typography>
-                    </Box>
-                  </Box>
+               {/* PROFILE */}
+<Box
+  sx={{
+    display: "flex",
+    alignItems: "center",
+    mb: 3,
+    width: "100%",
+  }}
+>
+  <Avatar
+    src={client.image}
+    sx={{ width: 56, height: 56, mr: 2, flexShrink: 0 }}
+  />
 
-                  <Rating value={client.rating} precision={0.5} readOnly />
-                </Box>
+  {/* TEXT BLOCK (takes remaining space) */}
+  <Box
+    sx={{
+      flex: 1,
+      minWidth: 0,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+    }}
+  >
+    <Typography
+      sx={{
+        fontWeight: 600,
+        color: "#3A2357",
+        whiteSpace: "nowrap",
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        lineHeight: 1.2,
+      }}
+    >
+      {client.name}
+    </Typography>
+
+    <Typography
+      sx={{
+        fontSize: "0.8rem",
+        color: "#8a7c96",
+        lineHeight: 1.2,
+        mr:5
+      }}
+    >
+      {client.role}
+    </Typography>
+  </Box>
+
+  {/* STARS (always right) */}
+  <Box sx={{ ml: 2, flexShrink: 0 }}>
+    <Rating value={client.rating} precision={0.5} readOnly />
+  </Box>
+</Box>
+
 
                 <Typography sx={{ fontWeight: 600, color: "#3A2357", mb: 1 }}>
                   {client.title}
@@ -173,7 +212,7 @@ const MyClients = () => {
           <IconButton
             onClick={() =>
               setCurrentIndex(
-                (prev) => (prev - 1 + clients.length) % clients.length
+                (prev) => (prev - 1 + clients.length) % clients.length,
               )
             }
           >

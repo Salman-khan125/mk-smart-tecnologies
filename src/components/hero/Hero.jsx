@@ -30,33 +30,31 @@ const Hero = () => {
             fontSize: { xs: "2.2rem", md: "3.5rem" },
           }}
         >
-          Solve Problems
-          with{" "}
-         <Box
-  component="span"
-  sx={{
-    position: "relative",
-    display: "inline-block",
-    px: 1,
-  }}
->
-  {/* RED ELLIPSE IMAGE */}
-  <Box
-    component="img"
-    src="/assets/hero/elipse.png"
-    alt="highlight"
-    sx={{
-      position: "absolute",
-      left: -13,         // align with text start
-      bottom: 5,      // slightly below text
-      width: "120%",   // a bit bigger than text
-      height: "1em", // adjust to match text height
-      zIndex: 1,
-    }}
-  />
-  code
-</Box>
-
+          Solve Problems with{" "}
+          <Box
+            component="span"
+            sx={{
+              position: "relative",
+              display: "inline-block",
+              px: 1,
+            }}
+          >
+            {/* RED ELLIPSE IMAGE */}
+            <Box
+              component="img"
+              src="/assets/hero/elipse.png"
+              alt="highlight"
+              sx={{
+                position: "absolute",
+                left: -13, // align with text start
+                bottom: 5, // slightly below text
+                width: "120%", // a bit bigger than text
+                height: "1em", // adjust to match text height
+                zIndex: 1,
+              }}
+            />
+            code
+          </Box>
         </Typography>
 
         <Typography
@@ -68,10 +66,16 @@ const Hero = () => {
             fontSize: "1rem",
           }}
         >
-          We create innovative software solutions that help businesses and individuals solve problems efficiently. Our technology-driven approach ensures scalable and effective results.
+          We create innovative software solutions that help businesses and
+          individuals solve problems efficiently. Our technology-driven approach
+          ensures scalable and effective results.
         </Typography>
 
         <Button
+          component="a"
+          href="https://wa.me/923140912800"
+          target="_blank"
+          rel="noopener noreferrer"
           sx={{
             mt: 4,
             backgroundColor: "#e30613",

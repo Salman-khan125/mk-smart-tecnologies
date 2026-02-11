@@ -21,7 +21,7 @@ const Footer = () => {
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             justifyContent: "space-between",
-            gap: { xs: 4, md: 8 }, // 🔹 more space overall
+            gap: { xs: 4, md: 8 },
           }}
         >
           {/* Logo */}
@@ -31,7 +31,7 @@ const Footer = () => {
               src={logo}
               alt="MK Smart Technologies"
               sx={{
-                height: { xs: 50, md: 60 }, // 🔹 bigger logo
+                height: { xs: 50, md: 60 },
                 mb: 2,
               }}
             />
@@ -40,9 +40,9 @@ const Footer = () => {
           {/* Right-side content */}
           <Stack
             direction={{ xs: "column", sm: "row" }}
-            spacing={6} // 🔹 more space between columns
+            spacing={6}
             sx={{
-              columnGap: { md: 8 }, // 🔹 extra horizontal breathing room
+              columnGap: { md: 8 },
             }}
           >
             {/* Working Hours */}
@@ -70,29 +70,97 @@ const Footer = () => {
             </Box>
 
             {/* Contact */}
-            <Box>
-              <Typography fontWeight={600} mb={1}>
-                Contact
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                +92 340 8618145
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                mkstech.hr@gmail.com
-              </Typography>
+           {/* Contact */}
+<Box>
+  <Typography fontWeight={600} mb={1}>
+    Contact
+  </Typography>
 
-              <Stack direction="row" spacing={1} mt={1}>
-                <IconButton size="small">
-                  <FacebookIcon fontSize="small" />
-                </IconButton>
-                <IconButton size="small">
-                  <TwitterIcon fontSize="small" />
-                </IconButton>
-                <IconButton size="small">
-                  <LinkedInIcon fontSize="small" />
-                </IconButton>
-              </Stack>
-            </Box>
+  {/* Clickable phone */}
+  <Typography variant="body2" color="text.secondary">
+    <Box
+      component="a"
+      href="tel:+923408618145"
+      sx={{
+        color: "#68acf5",
+        textDecoration: "none",
+        transition: "0.3s",
+        "&:hover": {
+          color: "#0d4f96", // darker blue on hover
+        },
+      }}
+    >
+      +92 340 8618145
+    </Box>
+  </Typography>
+
+  {/* Clickable email */}
+  <Typography variant="body2" color="text.secondary">
+    <Box
+      component="a"
+      href="mailto:mkstech.hr@gmail.com"
+      sx={{
+        color: "#1d85f5",
+        textDecoration: "none",
+        transition: "0.3s",
+        "&:hover": {
+          color: "#0d4f96",
+        },
+      }}
+    >
+      mkstech.hr@gmail.com
+    </Box>
+  </Typography>
+
+  {/* Social Icons */}
+  <Stack direction="row" spacing={1} mt={1}>
+    <IconButton
+      size="small"
+      component="a"
+      href="https://facebook.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={{
+        color: "#1d85f5",
+        transition: "0.3s",
+        "&:hover": { color: "#0d4f96" },
+      }}
+    >
+      <FacebookIcon fontSize="medium" />
+    </IconButton>
+
+    <IconButton
+      size="small"
+      component="a"
+      href="https://twitter.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={{
+        color: "#1d85f5",
+        transition: "0.3s",
+        "&:hover": { color: "#0d4f96" },
+      }}
+    >
+      <TwitterIcon fontSize="medium" />
+    </IconButton>
+
+    <IconButton
+      size="small"
+      component="a"
+      href="https://linkedin.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={{
+        color: "#68acf5",
+        transition: "0.3s",
+        "&:hover": { color: "#0d4f96" },
+      }}
+    >
+      <LinkedInIcon fontSize="medium" />
+    </IconButton>
+  </Stack>
+</Box>
+
           </Stack>
         </Box>
 

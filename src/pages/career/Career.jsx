@@ -182,7 +182,7 @@ const Career = () => {
               opportunities. From employee benefits to frequent engagement
               activities, we ensure our team feels empowered and valued.
             </Typography>
-          </Box>
+          </Box>  
 
           <Typography
             sx={{
