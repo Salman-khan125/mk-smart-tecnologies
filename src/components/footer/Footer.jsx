@@ -80,7 +80,7 @@ const Footer = () => {
   <Typography variant="body2" color="text.secondary">
     <Box
       component="a"
-      href="tel:+923408618145"
+      href="https://wa.me/923408618145"
       sx={{
         color: "#68acf5",
         textDecoration: "none",
