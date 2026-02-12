@@ -19,31 +19,37 @@ const Contact = () => {
 
   // Handle form submit
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSending(true);
+  e.preventDefault();
+  setSending(true);
 
-    try {
-      const res = await fetch("http://localhost:5000/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+  try {
+    const API_URL =
+      import.meta.env.MODE === "development"
+        ? "http://localhost:5000/send"
+        : "/api/send";
 
-      const data = await res.json();
+    const res = await fetch(API_URL, {   // ✅ USE VARIABLE
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
 
-      if (data.success) {
-        alert("Message sent successfully!");
-        setForm({ name: "", email: "", subject: "", message: "" });
-      } else {
-        alert("Error: " + (data.error || "Failed to send message"));
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Server error. Try again later.");
+    const data = await res.json();
+
+    if (data.success) {
+      alert("Message sent successfully!");
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } else {
+      alert("Error: " + (data.error || "Failed to send message"));
     }
+  } catch (err) {
+    console.error(err);
+    alert("Server error. Try again later.");
+  }
 
-    setSending(false);
-  };
+  setSending(false);
+};
+
 
   return (
     <>
