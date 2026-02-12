@@ -23,16 +23,16 @@ const Contact = () => {
   setSending(true);
 
   try {
-    const API_URL =
-      import.meta.env.MODE === "development"
-        ? "http://localhost:5000/send"
-        : "/api/send";
+ const API_URL = import.meta.env.MODE === "development"
+    ? "http://localhost:5000/send"
+    : "/api/send";
 
-    const res = await fetch(API_URL, {   // ✅ USE VARIABLE
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+const res = await fetch(API_URL, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(form),
+});
+
 
     const data = await res.json();
 
