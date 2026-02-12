@@ -4,14 +4,14 @@ import { Box, Container, Typography } from "@mui/material";
 
 const teamMembers = [
   {
-    name: "John Doe",
+    name: "Zari",
     role: "UI/UX Designer",
     image: "/assets/hero/image.png", 
     description:
       "We create intuitive, visually appealing UI/UX designs for better engagement designs for better engagement for better engagement",
   },
   {
-    name: "John Doe",
+    name: "Qasim",
     role: "iOS Developer",
     image: "/assets/hero/image1.png", 
     description:
@@ -25,7 +25,7 @@ const teamMembers = [
      "We create robust and scalable Android applications with intuitive interfaces, ensuring compatibility across devices and optimal performance using Kotlin and modern Android frameworks.",
   },
    {
-    name: "John Doe",
+    name: "fareed",
     role: "ASO Specialist",
     image: "/assets/hero/image3.png", 
     description:

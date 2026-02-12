@@ -71,7 +71,9 @@ const Contact = () => {
           >
             Contact Us
           </Typography>
-          <Typography sx={{ color: "#fff", opacity: 0.85 }}>Home / Contact</Typography>
+          <Typography sx={{ color: "#fff", opacity: 0.85 }}>
+            Home / Contact
+          </Typography>
         </Box>
       </Box>
 
@@ -107,18 +109,26 @@ const Contact = () => {
                   lineHeight: 1.7,
                 }}
               >
-                Have a project in mind or need help with your digital solutions? Our team is ready
-                to assist you. Reach out and let’s build something great together.
+                Have a project in mind or need help with your digital solutions?
+                Our team is ready to assist you. Reach out and let’s build
+                something great together.
               </Typography>
 
               {/* INFO BLOCKS */}
               <Box sx={{ mb: 3 }}>
-                <Typography sx={{ fontWeight: 600, color: "#3A2357" }}>📍 Address</Typography>
-                <Typography sx={{ color: "#7A6F86" }}>Lahore, Pakistan</Typography>
+                <Typography sx={{ fontWeight: 600, color: "#3A2357" }}>
+                  📍 Address
+                </Typography>
+                <Typography sx={{ color: "#7A6F86" }}>
+                  Second Floor, Mid City Mall,<br/> near Rehman Abad,<br/> Rawalpindi
+                  48061
+                </Typography>
               </Box>
 
               <Box sx={{ mb: 3 }}>
-                <Typography sx={{ fontWeight: 600, color: "#3A2357" }}>✉️ Email</Typography>
+                <Typography sx={{ fontWeight: 600, color: "#3A2357" }}>
+                  ✉️ Email
+                </Typography>
                 <Typography>
                   <Box
                     component="a"
@@ -136,7 +146,9 @@ const Contact = () => {
               </Box>
 
               <Box>
-                <Typography sx={{ fontWeight: 600, color: "#3A2357" }}>📞 Phone</Typography>
+                <Typography sx={{ fontWeight: 600, color: "#3A2357" }}>
+                  📞 Phone
+                </Typography>
                 <Typography>
                   <Box
                     component="a"
