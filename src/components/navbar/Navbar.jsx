@@ -180,7 +180,7 @@ const Navbar = () => {
             to="/contact"
             variant="contained"
       sx={{
-        mt: 30,
+        mt: 65,
         borderRadius: 2,
         px: 3,
         py: 1,
