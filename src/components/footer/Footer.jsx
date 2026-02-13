@@ -82,7 +82,7 @@ const Footer = () => {
       component="a"
       href="https://wa.me/923408618145"
       sx={{
-        color: "#68acf5",
+        color: "#1d85f5",
         textDecoration: "none",
         transition: "0.3s",
         "&:hover": {
@@ -151,7 +151,7 @@ const Footer = () => {
       target="_blank"
       rel="noopener noreferrer"
       sx={{
-        color: "#68acf5",
+        color: "#1d85f5",
         transition: "0.3s",
         "&:hover": { color: "#0d4f96" },
       }}

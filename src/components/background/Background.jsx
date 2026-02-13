@@ -3,6 +3,8 @@ import { Box, Button, Typography } from "@mui/material";
 import bgImage from "/assets/hero/background2.png"; // adjust path if needed
 
 const Background = () => {
+  
+
   return (
     <Box
       sx={{
@@ -62,22 +64,25 @@ const Background = () => {
             we can bring your vision to life!
           </Typography>
 
-          <Button
-            variant="contained"
-            sx={{
-              bgcolor: "#e50914",
-              px: 4,
-              py: 1.2,
-              fontSize: "0.95rem",
-              textTransform: "none",
-              borderRadius: 2,
-              "&:hover": {
-                bgcolor: "#c40812",
-              },
-            }}
-          >
-            Get in touch
-          </Button>
+       <Button
+  variant="contained"
+  component="a"
+  href="mailto:mkstech.hr@gmail.com?subject=Project Inquiry"
+  sx={{
+    bgcolor: "#e50914",
+    px: 4,
+    py: 1.2,
+    fontSize: "0.95rem",
+    textTransform: "none",
+    borderRadius: 2,
+    "&:hover": {
+      bgcolor: "#c40812",
+    },
+  }}
+>
+  Get in touch
+</Button>
+
         </Box>
       </Box>
     </Box>
