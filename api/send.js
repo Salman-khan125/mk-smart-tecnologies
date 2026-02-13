@@ -20,25 +20,41 @@ export default async function handler(req, res) {
       },
     });
 
-    await transporter.sendMail({
-      from: `"${name}" <${email}>`,  // so the email shows user name and email
-      replyTo: email,
-      to: process.env.CONTACT_EMAIL,
-      subject: `New Contact: ${subject}`,
-      text: `
+  await transporter.sendMail({
+  from: `"${name}" <${email}>`,  // shows the user name and email
+  replyTo: email,
+  to: process.env.CONTACT_EMAIL,
+  subject: `New Contact: ${subject}`,
+  text: `
 Name: ${name}
 Email: ${email}
 Subject: ${subject}
 Message: ${message}
-      `,
-      html: `
-        <h2>New Contact Form Message</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong><br/>${message}</p>
-      `,
-    });
+  `,
+  html: `
+  <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.5; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+    
+    <h2 style="color: #E30613; text-align: center; margin-bottom: 10px;">New Contact Form Message</h2>
+    <hr style="border: none; border-top: 2px solid #E30613; margin: 10px 0;" />
+    
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Email:</strong> <a href="mailto:${email}" style="color: #1a73e8;">${email}</a></p>
+    <p><strong>Subject:</strong> ${subject}</p>
+    
+    <p><strong>Message:</strong></p>
+    <div style="background: #f9f9f9; padding: 10px; border-radius: 5px; white-space: pre-line; border: 1px solid #eee;">
+      ${message}
+    </div>
+    
+    <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;" />
+    
+    <p style="text-align: center; font-size: 0.9rem; color: #777;">
+      This message was sent from your website contact form.
+    </p>
+  </div>
+  `,
+});
+
 
     res.status(200).json({ success: true, message: "Message sent successfully" });
   } catch (error) {
