@@ -175,7 +175,7 @@ const AboutUs = () => {
               alt="About Image 1"
               sx={{
                 width: "100%",
-                maxWidth: { xs: 340, sm: 380, md: 420 },
+                maxWidth: { xs: 369, sm: 380, md: 420 },
                 borderRadius: 2,
                 mb: 4,
                 zIndex: 1,
